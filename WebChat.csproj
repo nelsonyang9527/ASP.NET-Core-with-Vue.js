@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>WebChart</RootNamespace>
+    <RootNamespace>WebChat</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

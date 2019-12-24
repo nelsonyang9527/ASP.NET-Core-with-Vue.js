@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebChart", "WebChart.csproj", "{4F13600C-9144-46F1-96A5-D32861511681}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebChat", "WebChat.csproj", "{4F13600C-9144-46F1-96A5-D32861511681}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

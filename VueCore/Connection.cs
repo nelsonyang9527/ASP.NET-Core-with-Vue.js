@@ -10,7 +10,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
-namespace WebChart.NetCore.VueCore
+namespace WebChat.NetCore.VueCore
 {
     public static class Connection
     {
