@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebChart.NetCore.VueCore;
 
 namespace WebChart
 {
@@ -26,6 +27,8 @@ namespace WebChart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // connect vue app - middleware
+            services.AddSpaStaticFiles(options => options.RootPath = "wwwroot/dist");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +37,10 @@ namespace WebChart
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else  
+            {  
+                app.UseHsts();  
             }
 
             app.UseHttpsRedirection();
@@ -45,6 +52,17 @@ namespace WebChart
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            // use middleware and launch server for Vue  
+            app.UseSpaStaticFiles();  
+            app.UseSpa(spa =>  
+            {  
+                spa.Options.SourcePath = "wwwroot";  
+                if (env.IsDevelopment())  
+                {  
+                    spa.UseVueDevelopmentServer();  
+                }  
             });
         }
     }
